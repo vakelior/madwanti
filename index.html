@@ -3,16 +3,34 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<title>مدونتي</title>
-<meta name="description" content="مدونتي — مجلة عربية بسيطة وأنيقة." />
+<title>مدونتي — مجلة عربية للمقالات والأفكار</title>
+<meta name="description" content="مدونتي — مجلة عربية بسيطة وأنيقة تنشر مقالات نوعية في التقنية والموسيقى والسفر وأسلوب الحياة." />
+<link rel="canonical" href="https://vakelior.github.io/madwanti/" />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#000000" />
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="مدونتي" />
+<meta property="og:title" content="مدونتي — مجلة عربية للمقالات والأفكار" />
+<meta property="og:description" content="مقالات نوعية في التقنية والموسيقى والسفر وأسلوب الحياة." />
+<meta property="og:url" content="https://vakelior.github.io/madwanti/" />
+<meta property="og:locale" content="ar" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="مدونتي — مجلة عربية" />
+<meta name="twitter:description" content="مقالات نوعية في التقنية والموسيقى والسفر وأسلوب الحياة." />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/site.css" />
-<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://unpkg.com/lucide@0.454.0"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"مدونتي","url":"https://vakelior.github.io/madwanti/","inLanguage":"ar","description":"مجلة عربية للمقالات النوعية في التقنية والموسيقى والسفر وأسلوب الحياة."}
+</script>
 </head>
 <body>
+<a class="skip-link" href="#content-wrapper">تخطَّ إلى المحتوى</a>
 
 <div id="outer-wrapper">
 
@@ -22,10 +40,10 @@
         <div class="header-items">
           <div class="main-logo">
             <span class="logo-mark"><i data-lucide="feather" class="lc"></i></span>
-            <span class="title"><a href="index.html">مدونتي<em>.</em></a></span>
+            <h1 class="title"><a href="index.html">مدونتي<em>.</em></a></h1>
           </div>
           <div class="flex-right">
-            <button class="icon-btn darkmode-toggle" aria-label="تبديل الوضع الليلي"><i data-lucide="moon" class="lc"></i><i data-lucide="sun" class="lc"></i></button>
+            <button class="icon-btn darkmode-toggle" aria-label="تبديل الوضع الليلي" aria-pressed="false"><i data-lucide="moon" class="lc"></i><i data-lucide="sun" class="lc"></i></button>
           </div>
         </div>
       </div>
@@ -68,7 +86,7 @@ function renderSlider(){
   var slides = POSTS.slice(0,3);
   var html = slides.map(function(p, i){
     return '<div class="featured-slide'+(i===0?' active':'')+'">'
-      + '<img class="thumb-bg" src="'+p.img+'" alt="'+p.title+'" />'
+      + '<img class="thumb-bg" src="'+p.img+'" alt="'+p.title+'" width="1200" height="800" />'
       + '<div class="mask"></div>'
       + '<div class="entry-info">'
       +   '<h2 class="entry-title"><a href="post.html?id='+p.id+'">'+p.title+'</a></h2>'
@@ -108,7 +126,7 @@ function renderGrid(){
   el.innerHTML = POSTS.map(function(p){
     return '<article class="post"><div class="card">'
       + '<a class="entry-thumbnail" href="post.html?id='+p.id+'">'
-      +   '<img src="'+p.img+'" alt="'+p.title+'" loading="lazy" />'
+      +   '<img src="'+p.img+'" alt="'+p.title+'" loading="lazy" width="1200" height="800" />'
       + '</a>'
       + '<div class="entry-header">'
       +   '<h2 class="entry-title"><a href="post.html?id='+p.id+'">'+p.title+'</a></h2>'
