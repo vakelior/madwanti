@@ -60,9 +60,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--title-font);font-weight:700;line-height:1.3e
 .main-header{width:100%;height:var(--header-height)}
 .header-items{display:flex;align-items:center;justify-content:space-between;height:var(--header-height)}
 .main-logo{display:flex;align-items:center;height:var(--header-height);gap:12px}
-.main-logo .title{font-family:var(--title-font);font-size:26px;color:var(--header-color);font-weight:700;line-height:1}
+.main-logo .title{font-family:var(--title-font);font-size:27px;color:var(--header-color);font-weight:700;line-height:1;letter-spacing:0}
 .main-logo .title a{color:var(--header-color)}
-.main-logo .title em{font-style:normal;color:var(--main-color)}
 .flex-right{display:flex;align-items:center;gap:4px}
 .icon-btn{display:flex;align-items:center;justify-content:center;width:42px;height:42px;font-size:20px;color:var(--header-color);border-radius:50%;transition:background .2s,color .2s;outline:none}
 .icon-btn .lc{width:1.15em;height:1.15em;color:#ffffff;stroke:#ffffff}
@@ -96,7 +95,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--title-font);font-weight:700;line-height:1.3e
 /* ===== Content ===== */
 #content-wrapper{width:100%;padding:60px 0}
 .section-title{display:flex;align-items:center;justify-content:space-between;margin:0 0 30px}
-.section-title .title{display:flex;align-items:center;gap:14px;font-family:var(--title-font);font-size:27px;color:var(--title-color);font-weight:700}
+.section-title .title{display:flex;align-items:center;gap:14px;font-family:var(--title-font);font-size:27px;color:var(--title-color);font-weight:700;letter-spacing:0}
 .section-title .title:before{content:'';width:20px;height:3px;background:var(--white)}
 
 /* Grid posts */
