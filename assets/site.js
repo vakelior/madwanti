@@ -30,28 +30,8 @@ function initIcons(){
 }
 document.addEventListener('DOMContentLoaded', initIcons);
 
-/* ===== Dark mode ===== */
-function initTheme(){
-  var html = document.documentElement;
-  var saved = null;
-  try { saved = localStorage.getItem('madwanti-theme'); } catch(e){}
-  if(saved === 'dark') html.classList.add('is-dark');
-  document.querySelectorAll('.darkmode-toggle').forEach(function(btn){
-    btn.setAttribute('aria-pressed', html.classList.contains('is-dark') ? 'true' : 'false');
-    btn.addEventListener('click', function(){
-      html.classList.toggle('is-dark');
-      var dark = html.classList.contains('is-dark');
-      btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
-      try { localStorage.setItem('madwanti-theme', dark ? 'dark' : 'light'); } catch(e){}
-    });
-  });
-}
-
 /* ===== Helpers ===== */
 function makeIcon(name, cls){
   cls = cls || 'lc';
   return '<i data-lucide="'+name+'" class="'+cls+'"></i>';
 }
-
-/* Run shared behaviors across all pages */
-initTheme();
