@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<title>من نحن — مدونتي</title>
+<meta name="description" content="تعرّف على مدونتي — مجلة عربية للقصص الملهمة في السفر والتقنية والموسيقى والأخبار." />
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+#content-wrapper{width:100%;padding:0 0 56px}
+.about-hero{position:relative;text-align:center;padding:72px 20px;background:linear-gradient(135deg,rgba(232,128,90,0.14),transparent 65%),var(--outer-bg);border:1px solid var(--border-color);border-radius:10px;margin:28px 24px 46px}
+.about-hero .hero-ic{display:flex;align-items:center;justify-content:center;width:84px;height:84px;margin:0 auto 18px;background:var(--grad-main);color:#fff;border-radius:50%;box-shadow:0 8px 30px rgba(232,128,90,0.35)}
+.about-hero .hero-ic .lc{width:40px;height:40px}
+.about-hero h1{font-family:var(--title-font);font-size:42px;color:var(--title-color);margin:0 0 10px;font-weight:700}
+.about-hero p{font-size:16px;max-width:560px;margin:0 auto;color:var(--text-color);line-height:1.85em}
+.about-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin:0 0 52px}
+.about-col{background:var(--gray-bg);border:1px solid var(--border-color);border-radius:var(--radius);padding:38px 30px;text-align:center;box-shadow:var(--shadow-sm);transition:border-color .3s,transform .3s}
+.about-col:hover{border-color:var(--main-color);transform:translateY(-4px)}
+.about-col .col-ic{display:flex;align-items:center;justify-content:center;width:64px;height:64px;margin:0 auto 18px;background:var(--outer-bg);border:1px solid var(--border-color);border-radius:50%;color:var(--main-color)}
+.about-col .col-ic .lc{width:30px;height:30px}
+.about-col h3{font-family:var(--title-font);font-size:23px;color:var(--title-color);margin:0 0 8px;font-weight:700}
+.about-col p{font-size:14px;color:var(--text-color);line-height:1.75em}
+.section-title{text-align:center;margin:0 0 34px}
+.section-title h2{font-family:var(--title-font);font-size:30px;color:var(--title-color);margin:0 0 6px;font-weight:700}
+.section-title p{font-size:14px;color:var(--meta-color)}
+.contact-wrap{max-width:640px;margin:0 auto;background:var(--gray-bg);border:1px solid var(--border-color);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow-sm)}
+#contact{margin-top:30px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 16px}
+.form-field{margin:0 0 16px}
+.form-field label{display:block;font-size:12.5px;font-weight:600;color:var(--title-color);margin:0 0 7px}
+.form-field label .req{color:var(--main-color)}
+.form-field input,.form-field textarea{width:100%;background:var(--outer-bg);border:1px solid var(--border-color);font-size:14px;padding:13px 16px;border-radius:6px;transition:border-color .2s}
+.form-field input:focus,.form-field textarea:focus{border-color:var(--main-color)}
+.form-field textarea{height:140px;resize:vertical}
+.submit-btn{display:inline-flex;align-items:center;gap:8px;background:var(--grad-main);color:#fff;font-size:14px;font-weight:600;padding:14px 30px;border-radius:6px;transition:all .25s}
+.submit-btn .lc{width:1.1em;height:1.1em}
+.submit-btn:hover{opacity:.9;transform:translateY(-2px)}
+.form-success{display:none;text-align:center;padding:24px;background:var(--outer-bg);border:1px solid var(--border-color);border-radius:var(--radius);margin-top:16px}
+.form-success .lc{color:var(--main-color);width:42px;height:42px;margin:0 auto 8px}
+.form-success p{font-size:15px;color:var(--title-color)}
+@media(max-width:980px){.about-cols{grid-template-columns:1fr}.about-hero h1{font-size:32px}}
+@media(max-width:680px){.form-row{grid-template-columns:1fr}.about-hero{padding:54px 18px;margin:16px 0 30px}.about-hero h1{font-size:28px}}
+</style>
+</head>
+<body>
+
+<div id="outer-wrapper">
+
+  <header id="header-wrapper">
+    <div class="main-header">
+      <div class="container row-x1">
+        <div class="header-items">
+          <div class="flex-left">
+            <button class="mobile-menu-toggle" id="open-menu" aria-label="فتح القائمة"><i data-lucide="menu" class="lc"></i></button>
+            <div class="main-logo">
+              <span class="logo-mark"><i data-lucide="compass" class="lc"></i></span>
+              <span class="title"><a href="index.html">مدونتي<em>.</em></a></span>
+            </div>
+            <nav>
+              <ul class="main-nav">
+                <li><a href="index.html"><i data-lucide="home" class="lc"></i>الرئيسية</a></li>
+                <li class="has-sub"><a href="#"><i data-lucide="folder-open" class="lc"></i>التصنيفات <i data-lucide="chevron-down" class="lc lc-chev"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="category.html?c=تقنية"><i data-lucide="cpu" class="lc"></i>تقنية</a></li>
+                    <li><a href="category.html?c=موسيقى"><i data-lucide="music" class="lc"></i>موسيقى</a></li>
+                    <li><a href="category.html?c=أخبار"><i data-lucide="newspaper" class="lc"></i>أخبار</a></li>
+                    <li><a href="category.html?c=سفر"><i data-lucide="plane" class="lc"></i>سفر</a></li>
+                  </ul>
+                </li>
+                <li><a href="page.html"><i data-lucide="info" class="lc"></i>من نحن</a></li>
+                <li><a href="page.html#contact"><i data-lucide="mail" class="lc"></i>اتصل بنا</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="flex-right">
+            <button class="icon-btn darkmode-toggle" aria-label="تبديل الوضع الليلي"><i data-lucide="moon" class="lc"></i></button>
+            <button class="icon-btn" id="search-toggle" aria-label="بحث"><i data-lucide="search" class="lc"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="content-wrapper">
+    <div class="about-hero">
+      <div class="hero-ic"><i data-lucide="compass" class="lc"></i></div>
+      <h1>عن مدونتي</h1>
+      <p>نحن مجلة عربية تحتفي بفنّ الحياة الواعية — من خلال السفر والتقنية والموسيقى والأخبار. قصص منسّقة بعناية لتُلهمك كل يوم.</p>
+    </div>
+
+    <div class="container row-x1">
+      <div class="about-cols">
+        <div class="about-col">
+          <div class="col-ic"><i data-lucide="heart" class="lc"></i></div>
+          <h3>صُنع بحب</h3>
+          <p>كل مقال يُكتب ويُراجع بعناية فائقة ليقدّم لك قيمةً حقيقية وإلهاماً صادقاً.</p>
+        </div>
+        <div class="about-col">
+          <div class="col-ic"><i data-lucide="sparkles" class="lc"></i></div>
+          <h3>أفكار متجدّدة</h3>
+          <p>أدلّة وقصص وأفكار جديدة كل أسبوع لتساعدك على عيش حياة أجمل وأكثر وعياً.</p>
+        </div>
+        <div class="about-col">
+          <div class="col-ic"><i data-lucide="star" class="lc"></i></div>
+          <h3>الجودة أولاً</h3>
+          <p>نؤمن بالجودة قبل الكمية — محتوى مدروس وموثوق يمكنك الاعتماد عليه.</p>
+        </div>
+      </div>
+
+      <div id="contact">
+        <div class="section-title">
+          <h2>تواصل معنا</h2>
+          <p>لديك سؤال أو فكرة مقال أو ترغب فقط بإلقاء التحية؟ يسعدنا أن نسمع منك.</p>
+        </div>
+        <div class="contact-wrap">
+          <form onsubmit="event.preventDefault(); this.style.display='none'; document.getElementById('form-success').style.display='block';">
+            <div class="form-row">
+              <div class="form-field">
+                <label>الاسم <span class="req">*</span></label>
+                <input type="text" required placeholder="اسمك الكامل" />
+              </div>
+              <div class="form-field">
+                <label>البريد الإلكتروني <span class="req">*</span></label>
+                <input type="email" required placeholder="you@example.com" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label>الموضوع</label>
+              <input type="text" placeholder="عن ماذا تتحدث رسالتك؟" />
+            </div>
+            <div class="form-field">
+              <label>الرسالة <span class="req">*</span></label>
+              <textarea required placeholder="اكتب رسالتك هنا..."></textarea>
+            </div>
+            <button class="submit-btn" type="submit">إرسال الرسالة <i data-lucide="send" class="lc"></i></button>
+          </form>
+          <div class="form-success" id="form-success">
+            <i data-lucide="check-circle" class="lc"></i>
+            <p>شكراً لك! تم إرسال رسالتك وسنعاود التواصل معك قريباً.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer-wrapper" data-include-footer></footer>
+
+</div>
+
+<div class="search-overlay" id="search-overlay">
+  <div class="search-box">
+    <div class="search-head">
+      <i data-lucide="search" class="lc"></i>
+      <input type="text" id="search-input" placeholder="ابحث عن مقال أو موضوع..." />
+      <button class="close-search" aria-label="إغلاق"><i data-lucide="x" class="lc"></i></button>
+    </div>
+    <div class="search-results"></div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<div id="slide-menu">
+  <div class="slide-menu-header">
+    <div class="mobile-logo"><span class="logo-mark"><i data-lucide="compass" class="lc"></i></span> مدونتي</div>
+    <button class="hide-mobile-menu" id="close-menu" aria-label="إغلاق"><i data-lucide="x" class="lc"></i></button>
+  </div>
+  <nav class="mobile-menu">
+    <a href="index.html"><i data-lucide="home" class="lc"></i>الرئيسية</a>
+    <a href="category.html"><i data-lucide="folder-open" class="lc"></i>التصنيفات</a>
+    <a href="page.html"><i data-lucide="info" class="lc"></i>من نحن</a>
+    <a href="page.html#contact"><i data-lucide="mail" class="lc"></i>اتصل بنا</a>
+  </nav>
+  <div class="mobile-social">
+    <a href="#"><i data-lucide="facebook" class="lc"></i></a>
+    <a href="#"><i data-lucide="instagram" class="lc"></i></a>
+    <a href="#"><i data-lucide="youtube" class="lc"></i></a>
+  </div>
+</div>
+
+<button id="back-top" aria-label="العودة للأعلى"><i data-lucide="arrow-up" class="lc"></i></button>
+
+<script src="assets/site.js"></script>
+<script>initIcons();</script>
+</body>
+</html>
