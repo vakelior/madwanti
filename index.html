@@ -1,1 +1,144 @@
-$zaroRawData["removed"]$
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<title>My Blog — A Minimal Magazine for Ideas &amp; Stories</title>
+<meta name="description" content="My Blog — a clean, elegant magazine publishing quality articles on tech, music, travel and lifestyle." />
+<link rel="canonical" href="https://vakelior.github.io/madwanti/" />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#000000" />
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Zouheir Ryad" />
+<meta property="og:title" content="My Blog — A Minimal Magazine for Ideas &amp; Stories" />
+<meta property="og:description" content="Quality articles on tech, music, travel and lifestyle." />
+<meta property="og:url" content="https://vakelior.github.io/madwanti/" />
+<meta property="og:locale" content="en" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="My Blog — A Minimal Magazine" />
+<meta name="twitter:description" content="Quality articles on tech, music, travel and lifestyle." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+<script src="https://unpkg.com/lucide@0.454.0"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Zouheir Ryad","url":"https://vakelior.github.io/madwanti/","inLanguage":"en","description":"A minimal magazine for quality articles on tech, music, travel and lifestyle."}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#content-wrapper">Skip to content</a>
+
+<div id="outer-wrapper">
+
+  <header id="header-wrapper">
+    <div class="main-header">
+      <div class="container row-x1">
+        <div class="header-items">
+          <div class="main-logo">
+            <h1 class="title"><a href="index.html">Zouheir Ryad.</a></h1>
+          </div>
+          <div class="flex-right"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="featured-wrap">
+    <div class="container row-x1">
+      <div class="featured-items" id="featured-items">
+        <div class="slider-nav">
+          <button class="prev" aria-label="Previous"><i data-lucide="chevron-left" class="lc"></i></button>
+          <button class="next" aria-label="Next"><i data-lucide="chevron-right" class="lc"></i></button>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-wrapper">
+    <div class="container row-x1">
+      <div class="section-title">
+        <h2 class="title">Latest Articles</h2>
+      </div>
+      <div class="grid-items" id="grid-items"></div>
+    </div>
+  </div>
+
+  <footer id="footer-wrapper">
+    <div class="footer-bar"><div class="container row-x1">
+      <div class="footer-copyright">© 2026 Zouheir Ryad. All Rights Reserved. Designed and Developed by Zouheir Ryad.</div>
+    </div></div>
+  </footer>
+
+</div>
+
+<script src="assets/site.js"></script>
+<script>
+function renderSlider(){
+  var wrap = document.getElementById('featured-items');
+  var slides = POSTS.slice(0,3);
+  var html = slides.map(function(p, i){
+    return '<div class="featured-slide'+(i===0?' active':'')+'">'
+      + '<img class="thumb-bg" src="'+p.img+'" alt="'+p.title+'" width="1200" height="800" />'
+      + '<div class="mask"></div>'
+      + '<div class="entry-info">'
+      +   '<h2 class="entry-title"><a href="post.html?id='+p.id+'">'+p.title+'</a></h2>'
+      +   '<div class="entry-meta">'
+      +     '<span class="mi">'+makeIcon('pen-line')+'<span class="author-name">'+p.author+'</span></span>'
+      +     '<span class="mi">'+makeIcon('calendar')+p.date+'</span>'
+      +   '</div>'
+      + '</div></div>';
+  }).join('');
+  wrap.innerHTML = html + wrap.querySelector('.slider-nav').outerHTML + '<div class="slider-dots"></div>';
+  initIcons();
+
+  var dotsBox = wrap.querySelector('.slider-dots');
+  var all = wrap.querySelectorAll('.featured-slide');
+  var idx = 0;
+  all.forEach(function(_, i){
+    var b = document.createElement('button');
+    if(i===0) b.className='active';
+    b.addEventListener('click', function(){ go(i); reset(); });
+    dotsBox.appendChild(b);
+  });
+  function go(i){
+    all[idx].classList.remove('active');
+    dotsBox.children[idx].classList.remove('active');
+    idx = (i + all.length) % all.length;
+    all[idx].classList.add('active');
+    dotsBox.children[idx].classList.add('active');
+  }
+  var timer = setInterval(function(){ go(idx+1); }, 6000);
+  function reset(){ clearInterval(timer); timer = setInterval(function(){ go(idx+1); }, 6000); }
+  wrap.querySelector('.next').addEventListener('click', function(){ go(idx+1); reset(); });
+  wrap.querySelector('.prev').addEventListener('click', function(){ go(idx-1); reset(); });
+}
+
+function renderGrid(){
+  var el = document.getElementById('grid-items');
+  el.innerHTML = POSTS.map(function(p){
+    return '<article class="post"><div class="card">'
+      + '<a class="entry-thumbnail" href="post.html?id='+p.id+'">'
+      +   '<img src="'+p.img+'" alt="'+p.title+'" loading="lazy" width="1200" height="800" />'
+      + '</a>'
+      + '<div class="entry-header">'
+      +   '<h2 class="entry-title"><a href="post.html?id='+p.id+'">'+p.title+'</a></h2>'
+      +   '<p class="entry-excerpt">'+p.excerpt+'</p>'
+      +   '<div class="entry-meta">'
+      +     '<span class="mi">'+makeIcon('pen-line')+'<span class="author-name">'+p.author+'</span></span>'
+      +     '<span class="mi">'+makeIcon('calendar')+p.date+'</span>'
+      +   '</div>'
+      + '</div></div></article>';
+  }).join('');
+  initIcons();
+}
+
+renderSlider();
+renderGrid();
+</script>
+</body>
+</html>
