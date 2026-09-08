@@ -1,1 +1,129 @@
-$zaroRawData["46009"].stdout[0].content$
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<title>مدونتي</title>
+<meta name="description" content="مدونتي — مجلة عربية بسيطة وأنيقة." />
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<div id="outer-wrapper">
+
+  <header id="header-wrapper">
+    <div class="main-header">
+      <div class="container row-x1">
+        <div class="header-items">
+          <div class="main-logo">
+            <span class="logo-mark"><i data-lucide="compass" class="lc"></i></span>
+            <span class="title"><a href="index.html">مدونتي<em>.</em></a></span>
+          </div>
+          <div class="flex-right">
+            <button class="icon-btn darkmode-toggle" aria-label="تبديل الوضع الليلي"><i data-lucide="moon" class="lc"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="featured-wrap">
+    <div class="container row-x1">
+      <div class="featured-items" id="featured-items">
+        <div class="slider-nav">
+          <button class="prev" aria-label="السابق"><i data-lucide="chevron-right" class="lc"></i></button>
+          <button class="next" aria-label="التالي"><i data-lucide="chevron-left" class="lc"></i></button>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-wrapper">
+    <div class="container row-x1">
+      <div class="section-title">
+        <h2 class="title">آخر المقالات</h2>
+      </div>
+      <div class="grid-items" id="grid-items"></div>
+    </div>
+  </div>
+
+  <footer id="footer-wrapper">
+    <div class="footer-bar"><div class="container row-x1">
+      <div class="footer-copyright"><i data-lucide="heart" class="lc"></i>© 2026 <a href="index.html">مدونتي</a> — جميع الحقوق محفوظة</div>
+    </div></div>
+  </footer>
+
+</div>
+
+<script src="assets/site.js"></script>
+<script>
+function renderSlider(){
+  var wrap = document.getElementById('featured-items');
+  var slides = POSTS.slice(0,3);
+  var html = slides.map(function(p, i){
+    return '<div class="featured-slide'+(i===0?' active':'')+'">'
+      + '<img class="thumb-bg" src="'+p.img+'" alt="'+p.title+'" />'
+      + '<div class="mask"></div>'
+      + '<div class="entry-info">'
+      +   '<h2 class="entry-title"><a href="post.html?id='+p.id+'">'+p.title+'</a></h2>'
+      +   '<div class="entry-meta">'
+      +     '<span class="mi">'+makeIcon('user')+'<span class="author-name">'+p.author+'</span></span>'
+      +     '<span class="mi">'+makeIcon('calendar')+p.date+'</span>'
+      +   '</div>'
+      + '</div></div>';
+  }).join('');
+  wrap.innerHTML = html + wrap.querySelector('.slider-nav').outerHTML + '<div class="slider-dots"></div>';
+  initIcons();
+
+  var dotsBox = wrap.querySelector('.slider-dots');
+  var all = wrap.querySelectorAll('.featured-slide');
+  var idx = 0;
+  all.forEach(function(_, i){
+    var b = document.createElement('button');
+    if(i===0) b.className='active';
+    b.addEventListener('click', function(){ go(i); reset(); });
+    dotsBox.appendChild(b);
+  });
+  function go(i){
+    all[idx].classList.remove('active');
+    dotsBox.children[idx].classList.remove('active');
+    idx = (i + all.length) % all.length;
+    all[idx].classList.add('active');
+    dotsBox.children[idx].classList.add('active');
+  }
+  var timer = setInterval(function(){ go(idx+1); }, 6000);
+  function reset(){ clearInterval(timer); timer = setInterval(function(){ go(idx+1); }, 6000); }
+  wrap.querySelector('.next').addEventListener('click', function(){ go(idx+1); reset(); });
+  wrap.querySelector('.prev').addEventListener('click', function(){ go(idx-1); reset(); });
+}
+
+function renderGrid(){
+  var el = document.getElementById('grid-items');
+  el.innerHTML = POSTS.map(function(p){
+    return '<article class="post"><div class="card">'
+      + '<a class="entry-thumbnail" href="post.html?id='+p.id+'">'
+      +   '<img src="'+p.img+'" alt="'+p.title+'" loading="lazy" />'
+      + '</a>'
+      + '<div class="entry-header">'
+      +   '<h2 class="entry-title"><a href="post.html?id='+p.id+'">'+p.title+'</a></h2>'
+      +   '<p class="entry-excerpt">'+p.excerpt+'</p>'
+      +   '<div class="entry-meta">'
+      +     '<span class="mi">'+makeIcon('user')+'<span class="author-name">'+p.author+'</span></span>'
+      +     '<span class="mi">'+makeIcon('calendar')+p.date+'</span>'
+      +   '</div>'
+      + '</div></div></article>';
+  }).join('');
+  initIcons();
+}
+
+renderSlider();
+renderGrid();
+</script>
+</body>
+</html>
