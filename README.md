@@ -1,28 +1,25 @@
-# مدونتي — قالب سفر مدفوع بالتجوال (RTL / عربي)
+# Zouheir Ryad — Minimal English Magazine Template (LTR)
 
-موقع مدونة عربي متكامل متعدّد الصفحات مبني على HTML/CSS/JS خالص (بدون أي خادم)، باستخدام أيقونات **Lucide** وأحدث المعايير.
+A complete multi-page English blog site built with pure HTML/CSS/JS (no server), using **Lucide** icons and modern standards.
 
-## الصفحات
-- `index.html` — الرئيسية (سلايدر مميز + شبكة مقالات + شريط جانبي + نشرة بريدية)
-- `post.html?id=1` — صفحة المقال (قراءة، وسوم، مقالات ذات صلة، مشاركة، بطاقة الكاتب)
-- `category.html?c=سفر` — أرشيف التصنيفات مع الفلاتر
-- `page.html` — من نحن + اتصل بنا (نموذج)
-- `404.html` — صفحة غير موجودة
+## Pages
+- `index.html` — Home (featured slider + article grid)
+- `post.html?id=1` — Article page (reading, author, related metadata)
+- `404.html` — Not found page
 
-## الملفات
-- `assets/site.css` — نظام التصميم الكامل (متغيّرات، وضع ليلي، RTL، استجابة)
-- `assets/site.js` — البيانات (`POSTS`, `CATEGORIES`, `AUTHORS`) والمنطق المشترك (قائمة، بحث، وضع ليلي، فوتر)
-- `images/` — الصور
+## Files
+- `assets/site.css` — Full design system (variables, dark mode, LTR, responsive)
+- `assets/site.js` — Data (`POSTS`) and shared logic (menu, search, dark mode, footer)
+- `images/` — images
 
-## التقنيات
-- الخطوط: **Tajawal** (تجوال) للنصوص + **Amiri** للعناوين
-- الأيقونات: **Lucide** (عبر `unpkg.com/lucide@latest` + `lucide.createIcons()`)
-- الوضع الليلي محفوظ في `localStorage`
-- بحث فوري (فلترة محلية)
-- سلايدر تلقائي مع مؤشّرات وأسهم
+## Tech
+- Fonts: **Inter** for body text + **Playfair Display** for headings
+- Icons: **Lucide** (via `unpkg.com/lucide@latest` + `lucide.createIcons()`)
+- Dark mode saved in `localStorage`
+- Auto slider with indicators and arrows
 
-## التخصيص
-لتغيير المحتوى، عدّل مصفوفة `POSTS` في `assets/site.js`. لإضافة مقال جديد، أضف كائناً جديداً بمعرّف فريد `id` وصورة في `images/`.
+## Customization
+To change content, edit the `POSTS` array in `assets/site.js`. To add a new article, add a new object with a unique `id` and an image in `images/`.
 
-## النشر
-ارفع المجلّد كاملاً إلى أي استضافة ثابتة (cPanel، Netlify، Vercel، GitHub Pages...). لا يتطلب أي خادم أو قاعدة بيانات.
+## Deployment
+Upload the whole folder to any static host (cPanel, Netlify, Vercel, GitHub Pages...). No server or database required.
