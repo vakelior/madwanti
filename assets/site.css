@@ -58,8 +58,6 @@ h1,h2,h3,h4,h5,h6{font-family:var(--title-font);font-weight:700;line-height:1.3e
 .main-header{width:100%;height:var(--header-height)}
 .header-items{display:flex;align-items:center;justify-content:space-between;height:var(--header-height)}
 .main-logo{display:flex;align-items:center;height:var(--header-height);gap:12px}
-.main-logo .logo-mark{display:flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--white);color:var(--black);border-radius:50%}
-.main-logo .logo-mark .lc{width:18px;height:18px;color:#000000;stroke:#000000}
 .main-logo .title{font-family:var(--title-font);font-size:26px;color:var(--header-color);font-weight:700;line-height:1}
 .main-logo .title a{color:var(--header-color)}
 .main-logo .title em{font-style:normal;color:var(--main-color)}
