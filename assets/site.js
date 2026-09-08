@@ -37,9 +37,12 @@ function initTheme(){
   try { saved = localStorage.getItem('madwanti-theme'); } catch(e){}
   if(saved === 'dark') html.classList.add('is-dark');
   document.querySelectorAll('.darkmode-toggle').forEach(function(btn){
+    btn.setAttribute('aria-pressed', html.classList.contains('is-dark') ? 'true' : 'false');
     btn.addEventListener('click', function(){
       html.classList.toggle('is-dark');
-      try { localStorage.setItem('madwanti-theme', html.classList.contains('is-dark') ? 'dark' : 'light'); } catch(e){}
+      var dark = html.classList.contains('is-dark');
+      btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      try { localStorage.setItem('madwanti-theme', dark ? 'dark' : 'light'); } catch(e){}
     });
   });
 }
