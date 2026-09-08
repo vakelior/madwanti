@@ -25,6 +25,7 @@
   --footer-color:#ffffff;
   --button-bg:#000000;
   --button-color:#ffffff;
+  --grad-main:#000000;
 
   --radius:2px;
   --header-height:66px;
@@ -56,6 +57,8 @@ img{max-width:100%;border:0;display:block}
 button{background:transparent;font-family:var(--body-font);cursor:pointer;-webkit-appearance:none;appearance:none;border-radius:0}
 h1,h2,h3,h4,h5,h6{font-family:var(--title-font);font-weight:700;line-height:1.3em;color:var(--title-color)}
 ::selection{background:var(--black);color:var(--white)}
+:focus-visible{outline:2px solid var(--main-color);outline-offset:3px;border-radius:2px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 
 .lc{width:1em;height:1em;stroke-width:2;vertical-align:-0.15em;flex-shrink:0}
 
@@ -70,7 +73,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--title-font);font-weight:700;line-height:1.3e
 .main-logo{display:flex;align-items:center;height:var(--header-height);gap:12px}
 .main-logo .logo-mark{display:flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--black);color:var(--white);border-radius:50%}
 .main-logo .logo-mark .lc{width:18px;height:18px}
-.main-logo .title{font-family:var(--title-font);font-size:26px;color:var(--header-color);font-weight:700;line-height:1}
+.main-logo .title{font-family:var(--title-font);font-size:26px;color:var(--header-color);font-weight:700;line-height:1;margin:0}
 .main-logo .title a{color:var(--header-color)}
 .main-logo .title em{font-style:normal;color:var(--main-color)}
 .flex-right{display:flex;align-items:center;gap:4px}
@@ -156,6 +159,17 @@ html.is-dark .icon-btn .lucide-sun{display:inline-block}
 .post-body ul li:before{content:'';position:absolute;right:0;top:17px;width:8px;height:8px;border-radius:50%;background:var(--main-color)}
 .post-body blockquote{position:relative;background:var(--gray-bg);border-right:3px solid var(--main-color);color:var(--title-color);font-family:var(--title-font);font-size:22px;line-height:1.6em;padding:24px 28px;margin:0 0 28px}
 .post-body a{border-bottom:1px solid var(--main-color)}
+
+/* ===== إمكانية الوصول ===== */
+.skip-link{position:absolute;top:-100px;right:16px;z-index:1000;background:var(--black);color:var(--white);padding:10px 18px;font-size:13px;font-weight:600;border-radius:2px;transition:top .2s}
+.skip-link:focus{top:16px}
+
+/* ===== طباعة ===== */
+@media print{
+  #header-wrapper,#featured-wrap,#footer-wrapper,.slider-nav,.slider-dots{display:none!important}
+  body{color:#000}
+  .post-body{max-width:100%}
+}
 
 /* ===== Response ===== */
 @media(max-width:980px){
