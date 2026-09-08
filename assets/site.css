@@ -68,15 +68,18 @@ h1,h2,h3,h4,h5,h6{font-family:var(--title-font);font-weight:700;line-height:1.3e
 .main-header{width:100%;height:var(--header-height)}
 .header-items{display:flex;align-items:center;justify-content:space-between;height:var(--header-height)}
 .main-logo{display:flex;align-items:center;height:var(--header-height);gap:12px}
-.main-logo .logo-mark{display:flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--black);color:var(--white)}
+.main-logo .logo-mark{display:flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--black);color:var(--white);border-radius:50%}
 .main-logo .logo-mark .lc{width:18px;height:18px}
 .main-logo .title{font-family:var(--title-font);font-size:26px;color:var(--header-color);font-weight:700;line-height:1}
 .main-logo .title a{color:var(--header-color)}
 .main-logo .title em{font-style:normal;color:var(--main-color)}
 .flex-right{display:flex;align-items:center;gap:4px}
-.icon-btn{display:flex;align-items:center;justify-content:center;width:42px;height:42px;font-size:20px;color:var(--header-color);transition:all .2s}
+.icon-btn{display:flex;align-items:center;justify-content:center;width:42px;height:42px;font-size:20px;color:var(--header-color);border-radius:50%;transition:background .2s,color .2s;outline:none}
 .icon-btn .lc{width:1.15em;height:1.15em}
 .icon-btn:hover{color:var(--white);background:var(--black)}
+.icon-btn .lucide-sun{display:none}
+html.is-dark .icon-btn .lucide-moon{display:none}
+html.is-dark .icon-btn .lucide-sun{display:inline-block}
 
 /* ===== Featured Slider ===== */
 #featured-wrap{padding:28px 0 0}

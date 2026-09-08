@@ -21,11 +21,11 @@
       <div class="container row-x1">
         <div class="header-items">
           <div class="main-logo">
-            <span class="logo-mark"><i data-lucide="compass" class="lc"></i></span>
+            <span class="logo-mark"><i data-lucide="feather" class="lc"></i></span>
             <span class="title"><a href="index.html">مدونتي<em>.</em></a></span>
           </div>
           <div class="flex-right">
-            <button class="icon-btn darkmode-toggle" aria-label="تبديل الوضع الليلي"><i data-lucide="moon" class="lc"></i></button>
+            <button class="icon-btn darkmode-toggle" aria-label="تبديل الوضع الليلي"><i data-lucide="moon" class="lc"></i><i data-lucide="sun" class="lc"></i></button>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
 
   <footer id="footer-wrapper">
     <div class="footer-bar"><div class="container row-x1">
-      <div class="footer-copyright"><i data-lucide="heart" class="lc"></i>© 2026 <a href="index.html">مدونتي</a> — جميع الحقوق محفوظة</div>
+      <div class="footer-copyright"><i data-lucide="copyright" class="lc"></i>© 2026 <a href="index.html">مدونتي</a> — جميع الحقوق محفوظة</div>
     </div></div>
   </footer>
 
@@ -73,7 +73,7 @@ function renderSlider(){
       + '<div class="entry-info">'
       +   '<h2 class="entry-title"><a href="post.html?id='+p.id+'">'+p.title+'</a></h2>'
       +   '<div class="entry-meta">'
-      +     '<span class="mi">'+makeIcon('user')+'<span class="author-name">'+p.author+'</span></span>'
+      +     '<span class="mi">'+makeIcon('pen-line')+'<span class="author-name">'+p.author+'</span></span>'
       +     '<span class="mi">'+makeIcon('calendar')+p.date+'</span>'
       +   '</div>'
       + '</div></div>';
@@ -114,7 +114,7 @@ function renderGrid(){
       +   '<h2 class="entry-title"><a href="post.html?id='+p.id+'">'+p.title+'</a></h2>'
       +   '<p class="entry-excerpt">'+p.excerpt+'</p>'
       +   '<div class="entry-meta">'
-      +     '<span class="mi">'+makeIcon('user')+'<span class="author-name">'+p.author+'</span></span>'
+      +     '<span class="mi">'+makeIcon('pen-line')+'<span class="author-name">'+p.author+'</span></span>'
       +     '<span class="mi">'+makeIcon('calendar')+p.date+'</span>'
       +   '</div>'
       + '</div></div></article>';
