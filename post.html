@@ -55,7 +55,7 @@
 
   <footer id="footer-wrapper">
     <div class="footer-bar"><div class="container row-x1">
-      <div class="footer-copyright">© 2026 Zouheir Ryad. All Rights Reserved. Designed and Developed by Zouheir Ryad.</div>
+      <div class="footer-copyright">Developed by Zouheir Ryad.</div>
     </div></div>
   </footer>
 
@@ -74,13 +74,14 @@ function setMeta(attr, val){
   var m = document.querySelector('meta['+attr+']');
   if(m) m.setAttribute('content', val);
 }
+var excerpt = makeExcerpt(p.body, 150);
 setMeta('property="og:title"', p.title);
-setMeta('property="og:description"', p.excerpt);
+setMeta('property="og:description"', excerpt);
 setMeta('property="og:image"', 'https://vakelior.github.io/madwanti/' + p.img);
 setMeta('property="og:url"', 'https://vakelior.github.io/madwanti/post.html?id=' + p.id);
-setMeta('name="description"', p.excerpt);
+setMeta('name="description"', excerpt);
 setMeta('name="twitter:title"', p.title);
-setMeta('name="twitter:description"', p.excerpt);
+setMeta('name="twitter:description"', excerpt);
 setMeta('name="twitter:image"', 'https://vakelior.github.io/madwanti/' + p.img);
 var canon = document.querySelector('link[rel="canonical"]');
 if(canon) canon.href = 'https://vakelior.github.io/madwanti/post.html?id=' + p.id;
@@ -93,7 +94,7 @@ jsonld.textContent = JSON.stringify({
   '@context':'https://schema.org',
   '@type':'BlogPosting',
   'headline':p.title,
-  'description':p.excerpt,
+  'description':excerpt,
   'image':'https://vakelior.github.io/madwanti/' + p.img,
   'author':{'@type':'Person','name':p.author},
   'datePublished':(isoDates[p.id] || '2026-09-08') + 'T00:00:00+01:00',

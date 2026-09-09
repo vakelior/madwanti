@@ -70,7 +70,7 @@
 
   <footer id="footer-wrapper">
     <div class="footer-bar"><div class="container row-x1">
-      <div class="footer-copyright">© 2026 Zouheir Ryad. All Rights Reserved. Designed and Developed by Zouheir Ryad.</div>
+      <div class="footer-copyright">Developed by Zouheir Ryad.</div>
     </div></div>
   </footer>
 
@@ -127,7 +127,7 @@ function renderGrid(){
       + '</a>'
       + '<div class="entry-header">'
       +   '<h2 class="entry-title"><a href="post.html?id='+p.id+'">'+p.title+'</a></h2>'
-      +   '<p class="entry-excerpt">'+p.excerpt+'</p>'
+      +   '<p class="entry-excerpt">'+makeExcerpt(p.body, 120)+'</p>'
       +   '<div class="entry-meta">'
       +     '<span class="mi">'+makeIcon('pen-line')+'<span class="author-name">'+p.author+'</span></span>'
       +     '<span class="mi">'+makeIcon('calendar')+p.date+'</span>'
