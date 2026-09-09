@@ -1,8 +1,3 @@
-/* ============================================================
-   Zouheir Ryad — Site data + shared logic
-   Simple: slider + articles only (author name and date)
-   ============================================================ */
-
 var POSTS = [
   { id:1, title:"How to Build a Professional Blog on Your Own Hosting", date:"September 8, 2026", author:"Zouheir Ryad", img:"images/tech.webp",
     excerpt:"A practical step-by-step guide to turning a Blogger template into an independent site that runs on any hosting, with tips to boost speed and security.",
@@ -21,23 +16,14 @@ var POSTS = [
     body:"<p>Traveling is one of the most beautiful experiences a person can live, but it needs smart planning to become a true pleasure rather than a tiring burden.</p><h2>Choose your destination wisely</h2><p>Set your budget first, then the right season, then pick a destination that suits your taste, interests and number of days off.</p><h2>Plan a flexible itinerary</h2><p>Leave room for surprises and free wandering. The best moments often happen outside strict plans.</p><blockquote>The most beautiful trips aren't to faraway places, but to experiences that stay in your memory.</blockquote><ul><li>Book flights and accommodation early to get the best prices.</li><li>Keep digital copies of your important documents.</li><li>Add travel insurance to avoid costly surprises.</li></ul>" },
   { id:6, title:"15 Best Coastal Destinations to Visit This Summer", date:"September 1, 2026", author:"Zouheir Ryad", img:"images/beach.webp",
     excerpt:"From Mediterranean shores to ocean islands — a list of the most beautiful coastal destinations for lovers of sun, sea and relaxation.",
-    body:"<p>As summer arrives, travelers long for sandy beaches and turquoise waters. We've gathered a list of the most beautiful coastal destinations around the world.</p><h2>The Mediterranean</h2><p>From Spain's southern coast to the Greek islands and the shores of Morocco, the Mediterranean remains an ideal destination with its clear waters and rich culture.</p><h2>Off-the-beaten-path islands</h2><p>Look for less crowded islands for a calmer, more private experience, away from the hustle of famous destinations.</p><blockquote>A beautiful beach isn't measured by its size, but by the peace of mind it gives you.</blockquote><h2>Planning tips</h2><ul><li>Book seasonally and avoid peak crowds.</li><li>Don't forget sun protection.</li><li>Explore local restaurants to get to know the culture of the place.</li></ul>" }
+    body:"<p>As summer arrives, travelers long for sandy beaches and turquoise waters. We've gathered a list of the most beautiful coastal destinations around the world.</p><h2>The Mediterranean</h2><p>From Spain's southern coast to the Greek islands and the shores of Morocco, the Mediterranean remains an ideal destination with its clear waters and rich culture.</p><h2>Off-the-beaten-path islands</h2><p>Look for less crowded islands for a calmer, more private experience, away from the hustle of famous destinations.</p><blockquote>A beautiful beach isn't measured by its size, but by the peace of mind it gives you.</blockquote><h2>Planning tips</h2><ul><li>Book seasonally and avoid peak crowds.</li><li>Don't forget sun protection.</li><li>Explore local restaurants to get to know the culture of the place.</li></ul>" },
 ];
 
-/* ===== Lucide icons setup ===== */
-function initIcons(){
-  if(window.lucide){ lucide.createIcons(); }
-}
+function initIcons(){ if(window.lucide){ lucide.createIcons(); } }
 document.addEventListener('DOMContentLoaded', initIcons);
 
-/* ===== Helpers ===== */
-function makeIcon(name, cls){
-  cls = cls || 'lc';
-  return '<i data-lucide="'+name+'" class="'+cls+'"></i>';
-}
+function makeIcon(name, cls){ cls = cls || 'lc'; return '<i data-lucide="'+name+'" class="'+cls+'"></i>'; }
 
-/* Extract plain-text excerpt from HTML body, capped to a fixed length.
-   Every article preview uses the SAME length for consistency. */
 function makeExcerpt(html, len){
   len = len || 120;
   var tmp = document.createElement('div');
