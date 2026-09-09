@@ -1,3 +1,8 @@
+/* ============================================================
+   Zouheir Ryad — Site data + shared logic
+   Articles about Zouheir Ryad (artist, producer, DJ)
+   ============================================================ */
+
 var POSTS = [
   { id:1, title:"How to Build a Professional Blog on Your Own Hosting", date:"September 8, 2026", author:"Zouheir Ryad", img:"images/tech.webp",
     excerpt:"A practical step-by-step guide to turning a Blogger template into an independent site that runs on any hosting, with tips to boost speed and security.",
@@ -19,9 +24,11 @@ var POSTS = [
     body:"<p>As summer arrives, travelers long for sandy beaches and turquoise waters. We've gathered a list of the most beautiful coastal destinations around the world.</p><h2>The Mediterranean</h2><p>From Spain's southern coast to the Greek islands and the shores of Morocco, the Mediterranean remains an ideal destination with its clear waters and rich culture.</p><h2>Off-the-beaten-path islands</h2><p>Look for less crowded islands for a calmer, more private experience, away from the hustle of famous destinations.</p><blockquote>A beautiful beach isn't measured by its size, but by the peace of mind it gives you.</blockquote><h2>Planning tips</h2><ul><li>Book seasonally and avoid peak crowds.</li><li>Don't forget sun protection.</li><li>Explore local restaurants to get to know the culture of the place.</li></ul>" },
 ];
 
+/* ===== Lucide icons setup ===== */
 function initIcons(){ if(window.lucide){ lucide.createIcons(); } }
 document.addEventListener('DOMContentLoaded', initIcons);
 
+/* ===== Helpers ===== */
 function makeIcon(name, cls){ cls = cls || 'lc'; return '<i data-lucide="'+name+'" class="'+cls+'"></i>'; }
 
 function makeExcerpt(html, len){
