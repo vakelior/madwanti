@@ -35,3 +35,14 @@ function makeIcon(name, cls){
   cls = cls || 'lc';
   return '<i data-lucide="'+name+'" class="'+cls+'"></i>';
 }
+
+/* Extract plain-text excerpt from HTML body, capped to a fixed length.
+   Every article preview uses the SAME length for consistency. */
+function makeExcerpt(html, len){
+  len = len || 120;
+  var tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  var text = (tmp.textContent || tmp.innerText || '').replace(/\s+/g, ' ').trim();
+  if(text.length <= len){ return text; }
+  return text.slice(0, len).replace(/\s+\S*$/, '') + '…';
+}
