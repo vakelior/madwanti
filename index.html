@@ -50,10 +50,6 @@
   <div id="featured-wrap">
     <div class="container row-x1">
       <div class="featured-items" id="featured-items">
-        <div class="slider-nav">
-          <button class="prev" aria-label="Previous"><i data-lucide="chevron-left" class="lc"></i></button>
-          <button class="next" aria-label="Next"><i data-lucide="chevron-right" class="lc"></i></button>
-        </div>
         <div class="slider-dots"></div>
       </div>
     </div>
@@ -89,14 +85,15 @@ function renderSlider(){
       +   '<h2 class="entry-title"><a href="post.html?id='+p.id+'">'+p.title+'</a></h2>'
       +   '<div class="entry-meta">'
       +     '<span class="mi">'+makeIcon('pen-line')+'<span class="author-name">'+p.author+'</span></span>'
-      +     '<span class="mi">'+makeIcon('calendar')+p.date+'</span>'
+      +     '<span class="mi">'+p.date+'</span>'
       +   '</div>'
       + '</div></div>';
   }).join('');
-  wrap.innerHTML = html + wrap.querySelector('.slider-nav').outerHTML + '<div class="slider-dots"></div>';
+  wrap.innerHTML = html;
   initIcons();
 
   var dotsBox = wrap.querySelector('.slider-dots');
+  if(dotsBox){
   var all = wrap.querySelectorAll('.featured-slide');
   var idx = 0;
   all.forEach(function(_, i){
@@ -105,6 +102,7 @@ function renderSlider(){
     b.addEventListener('click', function(){ go(i); reset(); });
     dotsBox.appendChild(b);
   });
+  }
   function go(i){
     all[idx].classList.remove('active');
     dotsBox.children[idx].classList.remove('active');
@@ -114,8 +112,6 @@ function renderSlider(){
   }
   var timer = setInterval(function(){ go(idx+1); }, 6000);
   function reset(){ clearInterval(timer); timer = setInterval(function(){ go(idx+1); }, 6000); }
-  wrap.querySelector('.next').addEventListener('click', function(){ go(idx+1); reset(); });
-  wrap.querySelector('.prev').addEventListener('click', function(){ go(idx-1); reset(); });
 }
 
 function renderGrid(){
@@ -130,7 +126,7 @@ function renderGrid(){
       +   '<p class="entry-excerpt">'+makeExcerpt(p.body, 120)+'</p>'
       +   '<div class="entry-meta">'
       +     '<span class="mi">'+makeIcon('pen-line')+'<span class="author-name">'+p.author+'</span></span>'
-      +     '<span class="mi">'+makeIcon('calendar')+p.date+'</span>'
+      +     '<span class="mi">'+p.date+'</span>'
       +   '</div>'
       + '</div></div></article>';
   }).join('');
