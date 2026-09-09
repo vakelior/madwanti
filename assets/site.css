@@ -60,7 +60,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--title-font);font-weight:700;line-height:1.3e
 .main-header{width:100%;height:var(--header-height)}
 .header-items{display:flex;align-items:center;justify-content:space-between;height:var(--header-height)}
 .main-logo{display:flex;align-items:center;height:var(--header-height);gap:12px}
-.main-logo .title{font-family:var(--title-font);font-size:27px;color:var(--header-color);font-weight:700;line-height:1;letter-spacing:0}
+.main-logo .title{font-family:var(--title-font);font-size:34px;color:var(--header-color);font-weight:700;line-height:1;letter-spacing:0}
 .main-logo .title a{color:var(--header-color)}
 .flex-right{display:flex;align-items:center;gap:4px}
 .icon-btn{display:flex;align-items:center;justify-content:center;width:42px;height:42px;font-size:20px;color:var(--header-color);border-radius:50%;transition:background .2s,color .2s;outline:none}
@@ -168,7 +168,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--title-font);font-weight:700;line-height:1.3e
   .featured-slide .entry-info{padding:0 20px 26px}
   .featured-slide .entry-title{font-size:27px}
   .slider-dots{left:14px;bottom:12px}
-  .main-logo .title{font-size:23px}
+  .main-logo .title{font-size:28px}
   .item-post h1.entry-title{font-size:30px}
   .post-hero img{height:280px}
   .post-body{font-size:16px}
